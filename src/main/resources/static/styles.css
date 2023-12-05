@@ -1,0 +1,87 @@
+body {
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 1100px;
+    min-height: 1000px;
+}
+table{
+    min-height: 300px;
+}
+
+.header {
+    background-color: #4f0184;
+    padding: 10px;
+    text-align: center;
+}
+
+.hotel-title {
+    color: white;
+    font-size: 18px;
+}
+
+.navigation {
+    background-color: #aef1bc;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.nav-button {
+    background-color: transparent;
+    border: 1px solid #4993be;
+}
+
+.filter-section {
+    background-color: #e6dcd7;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.filter-label {
+    font-size: 14px;
+}
+
+#filterDateFrom,
+#filterDateTo,
+#tf_searchByName {
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.search-button {
+    font-size: 14px;
+    padding: 5px;
+}
+
+#reservationsTableView {
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#reservationsTableView th,
+#reservationsTableView td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.action-button {
+    background-color: #95f2d7;
+    font-size: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}

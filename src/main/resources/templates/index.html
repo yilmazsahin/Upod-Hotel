@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"  >
+<head >
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>UPoD HOTEL</title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <label class="hotel-title">UPoD HOTEL</label>
+    </div>
+    <div class="navigation">
+        <button class="nav-button">Rooms</button>
+        <button class="nav-button">Features</button>
+        <button class="nav-button">Services</button>
+        <button class="nav-button">Customers</button>
+        <button class="nav-button">Reservations Services</button>
+    </div>
+    <div class="filter-section">
+        <form action="/reservations/filterByDate" method="get">
+            <label class="filter-label">Filter By</label>
+            <label class="filter-label">From</label>
+            <input type="date" id="fromDate" name="fromDate" required/>
+            <label class="filter-label">To</label>
+            <input type="date" id="toDate" name="toDate" required/>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="filter-section">
+        <label class="filter-label">Filter By</label>
+        <label class="filter-label">Name</label>
+        <input type="text" id="tf_searchByName"/>
+        <button
+                class="search-button"
+                onclick="handleSearchReservationsByNameButtonClick()"
+        >
+            Search
+        </button>
+    </div>
+    <table id="reservationsTableView">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Room Name</th>
+            <th>Check-In Date</th>
+            <th>Check-Out Date</th>
+            <th>Checked-In</th>
+            <th>Checked-Out</th>
+            <th>Customer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="reservation : ${reservations}">
+            <td th:text="${reservation.id}"></td>
+            <td th:text="${reservation.room.roomName}"></td>
+            <td th:text="${reservation.checkInDate}"></td>
+            <td th:text="${reservation.checkOutDate}"></td>
+            <td th:text="${reservation.checkedIn}"></td>
+            <td th:text="${reservation.checkedOut}"></td>
+            <td th:text="${reservation.customerId.fullName}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <button class="action-button" onclick="handleNewReservationButtonClick()">
+        NEW RESERVATION
+    </button>
+    <button class="action-button" onclick="handleEditReservationButtonClick()">
+        EDIT RESERVATION
+    </button>
+    <button
+            class="action-button"
+            onclick="handleDeleteReservationButtonClick()"
+    >
+        DELETE RESERVATION
+    </button>
+    <button class="action-button">ACCOMMODATION INVOICE</button>
+
+</div>
+</body>
+</html>
